@@ -2,13 +2,17 @@
 #include "Carro.h"
 
 void Carro::avanzar() {
-	coordenadas.z += 0.01;
+	coordenadas.z += 0.01f;
 	actualizarMatrizModelo();
 }
 
 void Carro::actualizarMatrizModelo() {
 	modelo = mat4(1.0f);
 	modelo = translate(modelo, coordenadas);
+}
+
+vec3 Carro::getCoordenadas() {
+	return coordenadas;
 }
 
 Carro::Carro() {
